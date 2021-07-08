@@ -11,4 +11,4 @@ puts "Quantos chocolates você pretende comer na vida?"
 puts "Eu pretendo comer "+((15*12)*60).to_s+" chocolates na vida."
 
 puts "Se sua idade é de 1232 milhões de segundos, ela em anos será:"
-puts "Convertendo a idade em anos, ela será de: "+(1232000000/(365*(24*(60**2)))).to_s+" anos."
+puts "Convertendo a idade em anos, ela será de: "+(1232000000/(365*24*(60**2))).to_s+" anos."
