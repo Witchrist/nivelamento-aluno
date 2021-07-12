@@ -19,9 +19,17 @@ def calcula_anosSegundos(segundos)
 end
 
 puts calcula_horasAnos(1)
+puts calcula_horasAnos(3)
+puts calcula_horasAnos(9)
 puts calcula_minutosDecadas(1)
+puts calcula_minutosDecadas(3)
+puts calcula_minutosDecadas(9)
 puts calcula_idadeSegundos(23)
+puts calcula_idadeSegundos(39)
+puts calcula_idadeSegundos(55)
 puts calcula_anosSegundos(725328000)
+puts calcula_anosSegundos(1229904000)
+puts calcula_anosSegundos(1734480000)
 
 
 
