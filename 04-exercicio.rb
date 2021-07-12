@@ -12,18 +12,15 @@ def calcula_area(raio)
     return area
 end
 
-puts "O diametro de circulos com raio 3, 6 e 10 é respectivamente:"
-puts calcula_diametro(3)
-puts calcula_diametro(6)
-puts calcula_diametro(10)
-puts "O comprimento de circulos com raio 3, 6 e 10 é respectivamente:"
-puts calcula_comprimento(3)
-puts calcula_comprimento(6)
-puts calcula_comprimento(10)
-puts "A area de circulos com raio 3, 6 e 10 é respectivamente:"
-puts calcula_area(3)
-puts calcula_area(6)
-puts calcula_area(10)
+puts "O diametro desse círculo é de: "+calcula_diametro(3).to_s
+puts "O diametro desse círculo é de: "+calcula_diametro(6).to_s
+puts "O diametro desse círculo é de: "+calcula_diametro(10).to_s
+puts "O comprimento desse círculo é de: "+calcula_comprimento(3).to_s
+puts "O comprimento desse círculo é de: "+calcula_comprimento(6).to_s
+puts "O comprimento desse círculo é de: "+calcula_comprimento(10).to_s
+puts "A area desse círculo é de: "+calcula_area(3).to_s
+puts "A area desse círculo é de: "+calcula_area(6).to_s
+puts "A area desse círculo é de: "+calcula_area(10).to_s
 
 
 
