@@ -18,15 +18,19 @@ def calcula_anosSegundos(segundos)
     return anosSegundos
 end
 
+puts "A quantidade de horas que existem em 1, 3 e 9 anos é respectivamente:"
 puts calcula_horasAnos(1)
 puts calcula_horasAnos(3)
 puts calcula_horasAnos(9)
+puts "A quantidade de minutos que existem em 1, 3 e 9 décadas é respectivamente:"
 puts calcula_minutosDecadas(1)
 puts calcula_minutosDecadas(3)
 puts calcula_minutosDecadas(9)
+puts "A quantidade de segundos existentes em 23, 39 e 55 anos é respectivamente:"
 puts calcula_idadeSegundos(23)
 puts calcula_idadeSegundos(39)
 puts calcula_idadeSegundos(55)
+puts "A quantidade de anos que existem em 725328000, 1229904000 e 1734480000 segundos é respectivamente:"
 puts calcula_anosSegundos(725328000)
 puts calcula_anosSegundos(1229904000)
 puts calcula_anosSegundos(1734480000)
