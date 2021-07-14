@@ -22,6 +22,8 @@ def valida_parametros(vacinacao, transmissao, leitos)
         validacao = "Dado inválido: transmissão "+transmissao.to_s
     elsif leitos<0.0 || leitos>1.0
         validacao = "Dado inválido: leitos "+leitos.to_s
+    else 
+        validacao = "Dados validados..."
     end 
         return validacao
 end
@@ -34,7 +36,12 @@ print "Insira a taxa de ocupação de leitos: "
 leitos = gets.to_f
 
 puts valida_parametros(vacinacao, transmissao, leitos)
-puts fase_pandemica(vacinacao, transmissao, leitos)
+
+if valida_parametros(vacinacao, transmissao, leitos)=="Dados validados..."
+    puts "A cor da fase pandêmica é: "+fase_pandemica(vacinacao, transmissao, leitos)
+else 
+    puts "Por favor, ajuste os valores inseridos..."
+end 
 
 
 # Estamos vivendo uma pandemia e o governador pediu um sistema para indicar qual a cor da fase 
