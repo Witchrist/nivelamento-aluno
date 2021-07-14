@@ -3,11 +3,11 @@ def fase_pandemica(vacinacao, transmissao, leitos)
         fase = "AZUL"
     elsif leitos<=0.5 && transmissao<1
         fase = "VERDE"
-    elsif leitos>0.5 && leitos<=0.65 && transmissao<1 
+    elsif leitos<=0.65 && transmissao<1 
         fase = "AMARELO"
-    elsif leitos>0.65 && leitos<=0.8 && transmissao<1
+    elsif leitos<=0.8 && transmissao<1
         fase = "LARANJA"
-    elsif leitos>0.8 && leitos<=0.9 || transmissao>=1
+    elsif leitos<=0.9 || transmissao>=1
         fase = "VERMELHO"
     else
         fase = "ROXA"
