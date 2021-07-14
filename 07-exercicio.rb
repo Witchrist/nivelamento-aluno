@@ -17,6 +17,8 @@ chute = gets.chomp
 if chute=="0"
     chute = chute.to_i
     puts tentativa_adivinhacao(chute, numero)
+elsif chute.include?(".") == true
+    puts "Insira apenas números inteiros"
 elsif chute.to_i<1 || chute.to_i>100
     puts "Insira um número de 0 a 100!"
 else 
