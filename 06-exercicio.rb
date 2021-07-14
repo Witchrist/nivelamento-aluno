@@ -3,11 +3,11 @@ def fase_pandemica(vacinacao, transmissao, leitos)
         fase = "AZUL"
     elsif leitos<=0.5 && transmissao<1
         fase = "VERDE"
-    elsif leitos>0.5 && transmissao<1 
+    elsif leitos>0.5 && leitos<=0.65 && transmissao<1 
         fase = "AMARELO"
-    elsif leitos>0.65 && transmissao<1
+    elsif leitos>0.65 && leitos<=0.8 && transmissao<1
         fase = "LARANJA"
-    elsif leitos>0.8 || transmissao>=1
+    elsif leitos>0.8 && leitos<=0.9 || transmissao>=1
         fase = "VERMELHO"
     else
         fase = "ROXA"
@@ -16,22 +16,22 @@ def fase_pandemica(vacinacao, transmissao, leitos)
 end
 
 def valida_parametros(vacinacao, transmissao, leitos)
-    if vacinacao<0.0 && vacinacao>1.0 
+    if vacinacao<0.0 || vacinacao>1.0 
         validacao = "Dado inválido: vacinação "+vacinacao.to_s
     elsif transmissao<0
         validacao = "Dado inválido: transmissão "+transmissao.to_s
-    elsif leitos<0.0 && leitos>1.0
+    elsif leitos<0.0 || leitos>1.0
         validacao = "Dado inválido: leitos "+leitos.to_s
     end 
         return validacao
 end
 
 print "Insira a taxa de vacinação: "
-vacinacao = gets.to_i
+vacinacao = gets.to_f
 print "Insira o fator de transmissão: "
-transmissao = gets.to_i
+transmissao = gets.to_f
 print "Insira a taxa de ocupação de leitos: "
-leitos = gets.to_i
+leitos = gets.to_f
 
 puts valida_parametros(vacinacao, transmissao, leitos)
 puts fase_pandemica(vacinacao, transmissao, leitos)
