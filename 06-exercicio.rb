@@ -1,5 +1,20 @@
+def valida_parametros(vacinacao, transmissao, leitos)
+    if vacinacao<0.0 || vacinacao>1.0 
+        validacao = "Dado inválido: vacinação "+vacinacao.to_s
+    elsif transmissao<0
+        validacao = "Dado inválido: transmissão "+transmissao.to_s
+    elsif leitos<0.0 || leitos>1.0
+        validacao = "Dado inválido: leitos "+leitos.to_s
+    else 
+        validacao = "Dados validados..."
+    end 
+        return validacao
+end
+
 def fase_pandemica(vacinacao, transmissao, leitos)
-    if vacinacao>0.8
+    if valida_parametros(vacinacao, transmissao, leitos)!="Dados validados..."
+        fase = "Por favor, ajuste os valores inseridos..."
+    elsif vacinacao>0.8
         fase = "AZUL"
     elsif leitos<=0.5 && transmissao<1
         fase = "VERDE"
@@ -15,18 +30,7 @@ def fase_pandemica(vacinacao, transmissao, leitos)
         return fase 
 end
 
-def valida_parametros(vacinacao, transmissao, leitos)
-    if vacinacao<0.0 || vacinacao>1.0 
-        validacao = "Dado inválido: vacinação "+vacinacao.to_s
-    elsif transmissao<0
-        validacao = "Dado inválido: transmissão "+transmissao.to_s
-    elsif leitos<0.0 || leitos>1.0
-        validacao = "Dado inválido: leitos "+leitos.to_s
-    else 
-        validacao = "Dados validados..."
-    end 
-        return validacao
-end
+
 
 print "Insira a taxa de vacinação: "
 vacinacao = gets.to_f
@@ -37,11 +41,8 @@ leitos = gets.to_f
 
 puts valida_parametros(vacinacao, transmissao, leitos)
 
-if valida_parametros(vacinacao, transmissao, leitos)=="Dados validados..."
-    puts "A cor da fase pandêmica é: "+fase_pandemica(vacinacao, transmissao, leitos)
-else 
-    puts "Por favor, ajuste os valores inseridos..."
-end 
+puts fase_pandemica(vacinacao, transmissao, leitos)
+
 
 
 # Estamos vivendo uma pandemia e o governador pediu um sistema para indicar qual a cor da fase 
