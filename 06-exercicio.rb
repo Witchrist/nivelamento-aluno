@@ -1,18 +1,18 @@
 def valida_parametros(vacinacao, transmissao, leitos)
     if vacinacao<0.0 || vacinacao>1.0 
         validacao = "Dado inválido: vacinação "+vacinacao.to_s
-    elsif transmissao<0
+    elsif transmissao<0.0
         validacao = "Dado inválido: transmissão "+transmissao.to_s
     elsif leitos<0.0 || leitos>1.0
         validacao = "Dado inválido: leitos "+leitos.to_s
     else 
-        validacao = "Dados validados..."
+        validacao = nil
     end 
         return validacao
 end
 
 def fase_pandemica(vacinacao, transmissao, leitos)
-    if valida_parametros(vacinacao, transmissao, leitos)!="Dados validados..."
+    if valida_parametros(vacinacao, transmissao, leitos)!=nil
         fase = "Por favor, ajuste os valores inseridos..."
     elsif vacinacao>0.8
         fase = "AZUL"
