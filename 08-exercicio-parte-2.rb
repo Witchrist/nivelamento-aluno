@@ -11,7 +11,10 @@ def calcula_mmc(numero1,numero2)
     end
 
     for n in (2..)
-        if (menor_numero*n)%maior_numero==0
+        if numero1==numero2
+            mmc = numero1
+            break
+        elsif (menor_numero*n)%maior_numero==0
             mmc = menor_numero*n
             break
         else 
@@ -26,7 +29,7 @@ numero1 = gets.chomp.to_i
 puts "Insira o segundo número: "
 numero2 = gets.chomp.to_i
 
-puts "MMC "+numero1.to_s+","+numero2.to_s+"="+calcula_mmc(numero1,numero2).to_s
+puts "MMC "+numero1.to_s+", "+numero2.to_s+" = "+calcula_mmc(numero1,numero2).to_s
 
 
 
