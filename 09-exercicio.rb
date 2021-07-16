@@ -44,6 +44,7 @@ puts "Bem-vindo ao jogo de adivinhação!"
 puts "O computador pensou em um número entre 0 e 100. Tente adivinhar!"
 
 numero = rand(0..100)
+puts "("+numero.to_s+")"
 print "Insira sua tentativa: "
 #puts "(" + numero.to_s + ")"
 
