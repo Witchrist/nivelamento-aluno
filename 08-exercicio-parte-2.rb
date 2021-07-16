@@ -1,81 +1,33 @@
-def calcula_fatoracao(numero)
-    primo2 = 0
-    primo3 = 0
-    primo5 = 0
-    primo7 = 0
-    until numero==1 
-        if numero%2==0
-            numero = numero/2
-            primo2 = primo2+2
-            next
-        elsif numero%3==0
-            numero = numero/3
-            primo3 = primo3+3
-            next
-        elsif numero%5==0
-            numero = numero/5
-            primo5 = primo5+5
-            next
-        elsif numero%7==0
-            numero = numero/7
-            primo7 = primo7+7
+def calcula_mmc(numero1,numero2)
+    if numero2<numero1
+        menor_numero = numero2
+    else
+        menor_numero = numero1
+    end
+    if numero1>numero2
+        maior_numero=numero1
+    else
+        maior_numero=numero2
+    end
+
+    for n in (2..)
+        if (menor_numero*n)%maior_numero==0
+            mmc = menor_numero*n
+            break
+        else 
             next
         end
     end
-    return primo2, primo3, primo5, primo7
+    return mmc
 end
-
 
 puts "Insira o primeiro número: "
 numero1 = gets.chomp.to_i
 puts "Insira o segundo número: "
 numero2 = gets.chomp.to_i
 
+puts "MMC "+numero1.to_s+","+numero2.to_s+"="+calcula_mmc(numero1,numero2).to_s
 
-puts calcula_fatoracao(numero1)
-calcula_fatoracao(numero2)
-
-
-
-# until numero1==1 
-#     if numero1%2==0
-#         numero1 = numero1/2
-#         primeiro_primo2 += 1
-#         next
-#     elsif numero1%3==0
-#         numero1 = numero1/3
-#         primeiro_primo3 += 1
-#         next
-#     elsif numero1%5==0
-#         numero1 = numero1/5
-#         primeiro_primo5 += 1
-#         next
-#     elsif numero1%7==0
-#         numero1 = numero1/7
-#         primeiro_primo7 += 1
-#         next
-#     end
-# end
-
-# until numero2==1 
-#     if numero2%2==0
-#         numero2 = numero2/2
-#         segundo_primo2 += 1
-#         next
-#     elsif numero2%3==0
-#         numero2 = numero2/3
-#         segundo_primo3 += 1
-#         next
-#     elsif numero2%5==0
-#         numero2 = numero2/5
-#         segundo_primo5 += 1
-#         next
-#     elsif numero2%7==0
-#         numero2 = numero2/7
-#         segundo_primo7 += 1
-#         next
-#     end
-# end
 
 
 
