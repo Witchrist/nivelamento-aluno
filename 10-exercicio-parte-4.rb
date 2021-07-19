@@ -15,6 +15,7 @@ while underscore<base
     end
     print externo+"_"+meio+"_"+externo  
     alguma = alguma+1 
+    puts
 end
 
 # 4) Quer mais? Tente fazer uma letra V, usando asteriscos “*” e
