@@ -1,6 +1,5 @@
 def remove_da_posicao(array, posicao)
     novo_array = []
-    lugar = array.size()
     if posicao<1 || posicao>array.size()-2
         return array
     else 
