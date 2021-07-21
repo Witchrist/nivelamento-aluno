@@ -6,14 +6,16 @@ def mediana(array)
         mediana = (array[posicao1]+array[posicao2])/2.0
         return mediana 
     else 
-        posicao = array.size/2.0
-        return array[posicao] 
+        mediana = array[(array.size/2.0)].to_f
+        return mediana
     end 
 end 
 
 
 puts(mediana([10, 0, -1, -500, 20, 100])) 
-puts(mediana([10, 0, -1, -500, 20]))      
+puts(mediana([10, 0, -1, -500, 20]))
+
+
 
 # 5) Faça uma função chamada 'mediana' que recebe um array de números e retorna a mediana entre eles.
 # Lembrando que para obter a mediana de uma série de números, é necessário ordenar a série 
