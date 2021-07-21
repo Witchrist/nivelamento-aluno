@@ -1,17 +1,25 @@
 def menor_maior(array)
+    posicao = 0
     for n in (0..array.size-1)
-        for x in (0..array.size-1)
-            if array[n]>array[x]
-                menor = array[x]
-                next
-            else
-                menor = array[n]
-                next
-            end
+        if array[posicao]>array[n]
+            menor = array[n]
+            posicao = posicao+1
+            next
+        else
+            next
         end
     end
-    print menor
-    return array
+    for n in (0..array.size-1)
+        if array[posicao]<array[n]
+            maior = array[n]
+            posicao = posicao+1
+            next
+        else
+            next
+        end
+    end
+    novo_array = [menor, maior]
+    return novo_array
 end
 
 print(menor_maior([10, 0, -1, -500, 20, 100])) # deve imprimir [-500, 100]
