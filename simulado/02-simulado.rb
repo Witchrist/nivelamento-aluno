@@ -16,11 +16,6 @@ def negativos_positivos(array)
             next
         end
     end
-    puts positivos
-    puts negativos
-    puts neutros
-    puts array.size
-    
     novo_array = [(positivos/tamanho), (neutros/tamanho), (negativos/tamanho)]
     return novo_array
 end

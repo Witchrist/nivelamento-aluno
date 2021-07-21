@@ -1,20 +1,22 @@
 def imprimir_tabela(numero)
-    for n in (1..numero)
-        for x in (1..n)
-            resultado = n*x
-            print resultado.to_s+" "
+    if numero <=0
+        puts "ARGUMENTO INVÁLIDO"
+    else 
+        for n in (1..numero)
+            for x in (1..n)
+                resultado = n*x
+                print resultado.to_s+" "
+            end
+            puts
         end
-        puts
     end
 end 
 
 
 
-
-
 imprimir_tabela(5)
 imprimir_tabela(0)
-imprimir_tabela(10)
+
 
 
 # 4) Defina uma função chamada “imprimir_tabela”, que deve receber um número inteiro 
