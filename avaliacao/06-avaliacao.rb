@@ -1,19 +1,34 @@
 def calcula_media_movel(mortes, intervalo)
     resultado = 0
     dias = 0
+    posicao = 0
     periodo = intervalo
     novo_array = []
-    for x in (0..mortes.size/intervalo)
+    maior = 0
+    while mortes.size>=periodo
         for n in (dias..periodo-1)
-            if n==intervalo-1
+            if n==periodo-1
                 resultado = resultado+mortes[n]
-                novo_array[x]=resultado/intervalo
+                novo_array[posicao] = resultado/intervalo.to_f
+                posicao = posicao+1
             else 
                 resultado = resultado+mortes[n]
             end
         end
-        dias = dias + intervalo
+        dias = dias+intervalo
         periodo = periodo+intervalo
+        resultado = 0
+        if periodo>mortes.size
+            maior = mortes.size-(periodo-intervalo)
+            for x in ((periodo-intervalo)..(mortes.size-1))
+                if x==mortes.size-1
+                    resultado = resultado+mortes[x]
+                    novo_array[novo_array.size] = resultado/maior.to_f
+                else 
+                    resultado = resultado+mortes[x]
+                end
+            end
+        end
     end
     return novo_array
 end 
@@ -30,12 +45,12 @@ mortes_diaria = [
 mortes_media_movel = calcula_media_movel(mortes_diaria, 7)
 print(mortes_media_movel)
 print("\n")
-# mortes_media_movel = calcula_media_movel(mortes_diaria, 5)
-# print(mortes_media_movel)
-# print("\n")
-# mortes_media_movel = calcula_media_movel(mortes_diaria, 10)
-# print(mortes_media_movel)
-# print("\n")
+mortes_media_movel = calcula_media_movel(mortes_diaria, 5)
+print(mortes_media_movel)
+print("\n")
+mortes_media_movel = calcula_media_movel(mortes_diaria, 10)
+print(mortes_media_movel)
+print("\n")
 
 
 
