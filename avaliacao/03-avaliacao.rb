@@ -15,7 +15,6 @@ def altura_escada(altura)
 end
 
 
-array = []
 puts(altura_escada(1))
 puts(altura_escada(2))
 puts(altura_escada(3))
