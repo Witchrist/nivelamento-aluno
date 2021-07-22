@@ -3,19 +3,19 @@ def altura_escada(altura)
     escada = []
     under = altura-1
     
-    if altura>=1
+    if altura<=0
+        return escada
+    else 
         for n in (1..altura)
             escada[n-1] = ("_"*under)+("#"*n)
             under = under - 1
         end
-    else 
-        return escada
     end
     return escada
 end
 
 
-
+array = []
 puts(altura_escada(1))
 puts(altura_escada(2))
 puts(altura_escada(3))
