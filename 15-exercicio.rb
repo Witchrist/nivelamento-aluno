@@ -28,24 +28,28 @@ def exibe_array(array)
     print("\n")
 end
 def embaralhador(baralho)
-    posicao = 0 
-    # while posicao<baralho.size
-    #     baralho[posicao] = baralho[rand(0..baralho.size-1)]
-    #     posicao = posicao+1
-    # end
-    # for x in (0..baralho.size-1)
-    #     carta = baralho[x]
-    #     for y in (x+1..baralho.size-1)
-    #         if carta == baralho[y]
-    #             while carta==baralho[y]
-    #             baralho[y]=baralho[rand(0..baralho.size-1)]
-    #             end
-    #             next
-    #         else
-    #             next
-    #         end
-    #     end 
-    # end
+    for x in (0..baralho.size-1)
+        baralho[x] = baralho[rand(0..baralho.size-1)]
+        for y in(0..x)
+            if baralho[x] == baralho[z]
+    end
+    # print baralho
+    # puts
+    for y in(1..baralho.size-1)
+        carta = baralho[y]
+        for z in (0..baralho.size-1)
+            if carta == baralho[z]
+                for a in (z+1..baralho.size-1)
+                    while carta == baralho[a]
+                    baralho[a]=baralho[rand(0..baralho.size-1)]
+                    end
+                end
+                next
+            else
+                next
+            end
+        end
+    end
     return baralho
 end
 puts "Baralho ANTES:"

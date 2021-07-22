@@ -1,6 +1,6 @@
 
 def sortear_numeros(qtd, limite_inicio, limite_fim)
-    sorteados=[1,2,3,4,55,6]
+    sorteados=[1,2,3,4,5,6]
     # for n in (0..qtd-1)
     #     sorteados[n] = rand(limite_inicio..limite_fim)
     # end
@@ -57,14 +57,14 @@ def obter_apostas(qtd, limite_inicio, limite_fim)
 end
 def verificar_acertos(sorteados, apostados)
     acertos = []
+    posicao=0
     for x in (0..sorteados.size-1)
         verificador = apostados[x]
         for y in(0..sorteados.size-1)
-            posicao = 0
             if verificador == sorteados[y]
                 acertos[posicao]=verificador
                 posicao = posicao+1
-                break
+                next
             else
                 next
             end
