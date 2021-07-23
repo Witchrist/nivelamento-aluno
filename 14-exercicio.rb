@@ -1,9 +1,9 @@
 
 def sortear_numeros(qtd, limite_inicio, limite_fim)
-    sorteados=[1,2,3,4,5,6]
-    # for n in (0..qtd-1)
-    #     sorteados[n] = rand(limite_inicio..limite_fim)
-    # end
+    sorteados=[]
+    for n in (0..qtd-1)
+        sorteados[n] = rand(limite_inicio..limite_fim)
+    end
     for x in (0..sorteados.size-1)
         numero = sorteados[x]
         for y in(x..sorteados.size-1)
