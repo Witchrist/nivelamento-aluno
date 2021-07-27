@@ -63,7 +63,6 @@ end
 
 
 
-
 puts "Baralho ANTES:"
 exibe_array(baralho)
 puts "Baralho DEPOIS:"
