@@ -27,41 +27,58 @@ def exibe_array(array)
     end
     print("\n")
 end
-def embaralhador(baralho)
-    for x in (0..baralho.size-1)
-        baralho[x] = baralho[rand(0..baralho.size-1)]
-        for y in(0..x)
-            if baralho[x] == baralho[z]
-    end
-    # print baralho
-    # puts
-    for y in(1..baralho.size-1)
-        carta = baralho[y]
-        for z in (0..baralho.size-1)
-            if carta == baralho[z]
-                for a in (z+1..baralho.size-1)
-                    while carta == baralho[a]
-                    baralho[a]=baralho[rand(0..baralho.size-1)]
-                    end
-                end
-                next
-            else
-                next
+
+def remove_da_posicao(array, posicao)
+    novo_array = []
+    if posicao<1 || posicao>array.size()-2
+        return array
+    else 
+        for n in (0..array.size()-2)
+            if n>=posicao
+                novo_array[n] = array[n+1]
+            else 
+                novo_array[n] = array[n]
             end
+        end
+    end
+    return novo_array
+end
+
+def embaralhador(baralho)
+    novo_baralho = baralho
+    baralho = []
+    tamanho = novo_baralho.size-1
+    for x in (0..tamanho)
+        numero = rand(0..novo_baralho.size-1)
+        baralho[x] = novo_baralho[numero]
+        if x < tamanho
+            novo_baralho = remove_da_posicao(novo_baralho,numero)
+            next
+        else 
+            break
         end
     end
     return baralho
 end
+
+
+
+
 puts "Baralho ANTES:"
 exibe_array(baralho)
 puts "Baralho DEPOIS:"
 exibe_array(embaralhador(baralho))
+# # baralho = remove_da_posicao(baralho, 32)
+# # puts baralho.size
 
-puts baralho.size
-baralho2 = embaralhador(baralho)
-puts baralho2.size
+# puts baralho.size
+# baralho2 = embaralhador(baralho)
+# puts baralho2.size
 
 # Exercicio 15
 # implemente o algoritmo desta função
 # a função deve retornar um array com o "baralho" embaralhado
 # OBS.: Usar somente funções "raiz" de manipulação de arrays!
+
+
+
