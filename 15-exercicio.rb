@@ -30,15 +30,11 @@ end
 
 def remove_da_posicao(array, posicao)
     novo_array = []
-    if posicao<1 || posicao>array.size()-2
-        return array
-    else 
-        for n in (0..array.size()-2)
-            if n>=posicao
-                novo_array[n] = array[n+1]
-            else 
-                novo_array[n] = array[n]
-            end
+    for n in (0..array.size()-2)
+        if n>=posicao
+            novo_array[n] = array[n+1]
+        else 
+            novo_array[n] = array[n]
         end
     end
     return novo_array
